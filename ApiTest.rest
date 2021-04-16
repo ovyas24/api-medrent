@@ -15,6 +15,12 @@ GET http://localhost:3000/api/admin/products?cat=yes
 GET http://localhost:3000/api/admin/products?cat=no
 
 ###
+GET http://localhost:3000/api/newRelease
+
+###
+GET http://localhost:3000/api/product/60797e0a8bc88c3fb4d3c4ef
+
+###
 POST http://localhost:3000/api/admin/products/
 content-type: application/json
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4ZTNmNjRiMjgwNjUwN2MiLCJlbWFpbCI6Im92eWFzQGdtYWlsLmNvbSIsImlhdCI6MTYxODU3MzY4NX0.-_EI7nv9yG8AVtPP3Qt5Pc18kK9D_PkIZfZ4Cfjju84
@@ -22,7 +28,7 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4
 {
 	"name":"moter",
     "id": "607979e75e69f7211867a98b",
-	"description":"Moter Wheel Chair bike",
+	"description":"Product 2",
     "price":12000,
     "image":"image.jpg"
 }
