@@ -9,7 +9,6 @@ const morgan = require('morgan')
 const port = process.env.PORT||3000
 const cors = require("cors")
 
-const userService = require("./controllers/Authentication")
 const app = express()
 
 app.use(express.static('public'))

@@ -1,8 +1,8 @@
 const Product = require("../model/product")
 const Category = require("../model/category")
 const Admin = require("../model/admin")
-const order = require("../model/order")
-const { CreateUser, hashPassword } = require("../helpers/BaseRepo")
+const bcrypt = require("bcryptjs")
+const { CreateUser, PasswordMatch } = require("../helpers/BaseRepo")
 
 class Repo {
     constructor() { }
@@ -80,6 +80,21 @@ class Repo {
         try {
             const newUser = await CreateUser(body)
             return newUser
+        } catch (error) {
+            return error
+        }
+    }
+
+    ChangePassword = async (body) =>{
+        try {
+            const isMatch = await PasswordMatch(body)
+            if(isMatch){
+                console.log("dash-break");
+                const hash = await bcrypt.hash(body.npassword, 10)
+                const result = Admin.updateOne({email:body.email},{password:hash})
+                return result
+            }
+            return null
         } catch (error) {
             return error
         }

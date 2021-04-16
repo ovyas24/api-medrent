@@ -1,7 +1,5 @@
 const Admin = require("../model/admin")
-const bcrypt = require('bcryptjs')
-
-    
+const bcrypt = require('bcryptjs');
 
 module.exports = {
     CreateUser : async (body) => {
@@ -18,5 +16,17 @@ module.exports = {
         const isUser = await newUser.save()
         console.log("------",isUser);
         return isUser
+    },
+    PasswordMatch :  async ({ email, opassword }) => {
+        try {
+            console.log("base-break", email, opassword);
+            const user = await Admin.findOne({email:email})
+            const isMatch = await bcrypt.compare(opassword, user.password)
+            console.log(isMatch);
+            return isMatch
+        } catch (error) {
+            console.log(error);
+            return false
+        }
     }
 }
