@@ -3,12 +3,10 @@ if(process.env.NODE_ENV!=='production'){
 }
 const express = require('express')
 const mongoose = require('mongoose')
-const jwt = require('jsonwebtoken');
 const passport = require("passport");
 const passportJWT = require("passport-jwt");
 const morgan = require('morgan')
 const port = process.env.PORT||3000
-const session = require("express-session")
 const cors = require("cors")
 
 const userService = require("./controllers/Authentication")
