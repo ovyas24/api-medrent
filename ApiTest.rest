@@ -1,0 +1,36 @@
+POST http://localhost:3000/admin/category
+content-type: application/json
+
+{
+	"name":"wheel chair",
+	"description":"moving bike"
+}
+
+###
+GET http://localhost:3000/admin/products?cat=yes
+
+###
+GET http://localhost:3000/admin/products?cat=no
+
+###
+POST http://localhost:3000/admin/products/
+content-type: application/json
+
+{
+	"name":"moter",
+    "id": "606b29597f02e423dbc32cc6",
+	"description":"Moter Wheel Chair bike",
+    "price":12000,
+    "image":"image.jpg"
+}
+
+###
+POST http://localhost:3000/admin/addUser/
+content-type: application/json
+
+{
+	"name":"ovyas24",
+    "email": "ovyas24@gmail.com",
+	"password":"admin@123",
+    "role":"admin"
+}
