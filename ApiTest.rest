@@ -15,7 +15,7 @@ GET http://localhost:3000/api/admin/products?cat=yes
 GET http://localhost:3000/api/admin/products?cat=no
 
 ###
-GET http://localhost:3000/api/newRelease
+GET https://medrent.herokuapp.com/api/newRelease
 
 ###
 GET http://localhost:3000/api/product/60797e0a8bc88c3fb4d3c4ef
