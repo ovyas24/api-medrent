@@ -42,6 +42,17 @@ class Repo {
         }
     }
 
+    DeleteProduct = async (cid,id) => {
+        try {
+            const isProductDelete = await Product.deleteOne({_id:id})
+            const isPulledFromCat = await Category.updateOne({_id:cid}, { $pull: {products : id} })
+
+            return { isProductDelete, isPulledFromCat }
+        } catch (error) {
+            return error
+        }
+    }
+
     AllProducts = async () => {
         try {
             const products = await Product.find({})

@@ -25,6 +25,11 @@ router.post("/products", passport.authenticate('jwt', { session: false }), async
    res.json(isProductAdded)
 })
 
+router.post("/delete-prodcut", passport.authenticate("jwt", { session : false }), async (req,res)=>{
+   const isDeleted = await Repo.DeleteProduct(req.body.catid, req.body.pid)
+   res.json(isDeleted)
+})
+
 router.post("/addUser", async (req, res) => {
    console.log(req.body);
    const newUser = await Repo.AddUser(req.body)
@@ -47,7 +52,7 @@ router.post("/login", async (req, res) => {
       console.log(user);
       res.json({ "message": "login successful", "user": userData });
    } catch (error) {
-      res.status(500).json({ "message": error })
+      res.status(500).json({ "message": "Password or Email may be wrong" })
    }
 })
 

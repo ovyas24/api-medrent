@@ -1,4 +1,4 @@
-POST http://localhost:3000/api/admin/category
+POST https://medrent.herokuapp.com/api/admin/category
 content-type: application/json
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4ZTNmNjRiMjgwNjUwN2MiLCJlbWFpbCI6Im92eWFzQGdtYWlsLmNvbSIsImlhdCI6MTYxODU3MzY4NX0.-_EI7nv9yG8AVtPP3Qt5Pc18kK9D_PkIZfZ4Cfjju84
 
@@ -9,32 +9,32 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4
 }
 
 ###
-GET http://localhost:3000/api/admin/products?cat=yes
+GET https://medrent.herokuapp.com/api/admin/products?cat=yes
 
 ###
-GET http://localhost:3000/api/admin/products?cat=no
+GET https://medrent.herokuapp.com/api/admin/products?cat=no
 
 ###
 GET https://medrent.herokuapp.com/api/newRelease
 
 ###
-GET http://localhost:3000/api/product/60797e0a8bc88c3fb4d3c4ef
+GET https://medrent.herokuapp.com/api/product/60797e0a8bc88c3fb4d3c4ef
 
 ###
-POST http://localhost:3000/api/admin/products/
+POST https://medrent.herokuapp.com/api/admin/products/
 content-type: application/json
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4ZTNmNjRiMjgwNjUwN2MiLCJlbWFpbCI6Im92eWFzQGdtYWlsLmNvbSIsImlhdCI6MTYxODU3MzY4NX0.-_EI7nv9yG8AVtPP3Qt5Pc18kK9D_PkIZfZ4Cfjju84
 
 {
 	"name":"moter",
-    "id": "607979e75e69f7211867a98b",
+    "id": "6079920af1a80c00153d8265",
 	"description":"Product 2",
     "price":12000,
     "image":"image.jpg"
 }
 
 ###
-POST http://localhost:3000/api/admin/addUser/
+POST https://medrent.herokuapp.com/api/admin/addUser/
 content-type: application/json
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4ZTNmNjRiMjgwNjUwN2MiLCJlbWFpbCI6Im92eWFzQGdtYWlsLmNvbSIsImlhdCI6MTYxODU3MzY4NX0.-_EI7nv9yG8AVtPP3Qt5Pc18kK9D_PkIZfZ4Cfjju84
 
@@ -46,15 +46,15 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4
 }
 
 ###
-POST http://localhost:3000/api/admin/login/
+POST https://medrent.herokuapp.com/api/admin/login/
 content-type: application/json
 
 {
     "email": "ovyas@gmail.com",
-	"password":"admin@1224"
+	"password":"admin@123"
 }
 ###
-POST http://localhost:3000/api/admin/change-password/
+POST https://medrent.herokuapp.com/api/admin/change-password/
 content-type: application/json
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4ZTNmNjRiMjgwNjUwN2MiLCJlbWFpbCI6Im92eWFzQGdtYWlsLmNvbSIsImlhdCI6MTYxODU3MzY4NX0.-_EI7nv9yG8AVtPP3Qt5Pc18kK9D_PkIZfZ4Cfjju84
 
