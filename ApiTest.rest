@@ -12,7 +12,10 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4
 GET https://medrent.herokuapp.com/api/admin/products?cat=yes
 
 ###
-GET https://medrent.herokuapp.com/api/admin/products?cat=no
+GET http://localhost:3000/api/admin/products?cat=no
+
+###
+GET http://localhost:3000/api/shop
 
 ###
 GET https://medrent.herokuapp.com/api/newRelease

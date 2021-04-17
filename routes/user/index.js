@@ -9,6 +9,7 @@ router.get("/shop", async (req,res) => {
     const products = await Repo.Shop(req.query.search)
     res.json(products)
 })
+
 router.get("/product/:id", async (req,res)=>{
     try {
         console.log(req.params.id);

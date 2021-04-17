@@ -42,10 +42,10 @@ class Repo {
         }
     }
 
-    DeleteProduct = async (cid,id) => {
+    DeleteProduct = async (cid, id) => {
         try {
-            const isProductDelete = await Product.deleteOne({_id:id})
-            const isPulledFromCat = await Category.updateOne({_id:cid}, { $pull: {products : id} })
+            const isProductDelete = await Product.deleteOne({ _id: id })
+            const isPulledFromCat = await Category.updateOne({ _id: cid }, { $pull: { products: id } })
 
             return { isProductDelete, isPulledFromCat }
         } catch (error) {
@@ -55,9 +55,28 @@ class Repo {
 
     AllProducts = async () => {
         try {
-            const products = await Product.find({})
+            const productsData = await Product.find({})
+            const products = []
+
+            for(var i =0; i < productsData.length ; i++){
+                const cat = await Category.findOne({ products: { $in: [productsData[i]._id] } })
+                let { name, price, description, image, date } = productsData[i]
+                let catname = cat.name, catdesc = cat.description, catid = cat._id
+                const product = {
+                    name, price, description, image, date,
+                    catname,
+                    catdesc
+                }
+
+                console.log(product);
+                products.push(product)
+            }
+
+            console.log("prodcuts", products);
             return products
+
         } catch (error) {
+            console.log(error);
             return error
         }
     }
@@ -96,13 +115,13 @@ class Repo {
         }
     }
 
-    ChangePassword = async (body) =>{
+    ChangePassword = async (body) => {
         try {
             const isMatch = await PasswordMatch(body)
-            if(isMatch){
+            if (isMatch) {
                 console.log("dash-break");
                 const hash = await bcrypt.hash(body.npassword, 10)
-                const result = Admin.updateOne({email:body.email},{password:hash})
+                const result = Admin.updateOne({ email: body.email }, { password: hash })
                 return result
             }
             return null
@@ -111,5 +130,6 @@ class Repo {
         }
     }
 }
+
 
 module.exports = new Repo()

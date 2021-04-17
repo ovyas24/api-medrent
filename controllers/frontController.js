@@ -22,6 +22,8 @@ class FrontRepo {
         }
     }
 
+    
+
     async NewRelaeses() {
         const products = Product.find().limit(4).sort({ $natural: -1 })
         return products
