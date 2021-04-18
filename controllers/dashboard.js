@@ -60,10 +60,10 @@ class Repo {
 
             for(var i =0; i < productsData.length ; i++){
                 const cat = await Category.findOne({ products: { $in: [productsData[i]._id] } })
-                let { name, price, description, image, date } = productsData[i]
+                let { _id,name, price, description, image, date } = productsData[i]
                 let catname = cat.name, catdesc = cat.description, catid = cat._id
                 const product = {
-                    name, price, description, image, date,
+                    _id,name, price, description, image, date,
                     catname,
                     catdesc
                 }

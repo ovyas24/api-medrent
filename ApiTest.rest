@@ -31,7 +31,7 @@ Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc5M2NiY2U4
 {
 	"name":"moter",
     "id": "6079920af1a80c00153d8265",
-	"description":"Product 2",
+	"description":"Product 11",
     "price":12000,
     "image":"image.jpg"
 }
