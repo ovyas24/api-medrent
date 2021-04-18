@@ -21,8 +21,7 @@ GET http://localhost:3000/api/shop
 GET https://medrent.herokuapp.com/api/newRelease
 
 ###
-GET https://medrent.herokuapp.com/api/product/60797e0a8bc88c3fb4d3c4ef
-
+GET https://medrent.herokuapp.com/api/product/607b0248bfbdaf0015b80f1f
 ###
 POST https://medrent.herokuapp.com/api/admin/products/
 content-type: application/json

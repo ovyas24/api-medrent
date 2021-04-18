@@ -7,12 +7,13 @@ class FrontRepo {
         try {
             const pro = await Product.findOne({ _id: id })
             const cat = await Category.findOne({ products: { $in: [id] } })
-            let { name, price, description, image, date } = pro
-            let catname = cat.name, catdesc = cat.description
+            let { _id, name, price, description, image, date } = pro
+            let catname = cat.name, catdesc = cat.description, catid = cat._id
             const product = {
-                name, price, description, image, date,
+                _id, name, price, description, image, date,
                 catname,
-                catdesc
+                catdesc,
+                catid
             }
             return product
 
@@ -22,7 +23,7 @@ class FrontRepo {
         }
     }
 
-    
+
 
     async NewRelaeses() {
         const products = Product.find().limit(4).sort({ $natural: -1 })

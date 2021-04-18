@@ -65,7 +65,8 @@ class Repo {
                 const product = {
                     _id,name, price, description, image, date,
                     catname,
-                    catdesc
+                    catdesc,
+                    catid
                 }
 
                 console.log(product);
